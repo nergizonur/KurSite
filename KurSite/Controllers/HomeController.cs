@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.Xml.Linq;
+using System.Xml.Serialization;
+using System.Security.Cryptography.X509Certificates;
+using KurSite.Models;
+using System.Xml;
+using Microsoft.SqlServer.Server;
 
 namespace KurSite.Controllers
 {
@@ -11,7 +19,13 @@ namespace KurSite.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            string link = "https://www.tcmb.gov.tr/kurlar/today.xml";
+            var xmlDocument = new XmlDocument();
+            xmlDocument.Load(link);
+            string usd = xmlDocument.SelectSingleNode("Tarih_Date/Currency[@Kod=\"USD\"]/BanknoteBuying").InnerXml.ToString();
+
+            return View(usd);
+
         }
     }
 }

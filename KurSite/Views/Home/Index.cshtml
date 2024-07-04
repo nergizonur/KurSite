@@ -1,4 +1,4 @@
-﻿
+﻿@model string
 @{
 
 }
@@ -12,10 +12,13 @@
     <title>Index</title>
 </head>
 <body>
-    <div class="p-5">
+    <div>
+        @Model
+    </div>
+    <div class="p-5 table-responsive-sm">
         <table class="table table-hover table-striped">
             <thead>
-                <tr>
+                <tr class="table-dark">
                     <th>
                         Döviz Kodu
                     </th>
@@ -32,6 +35,34 @@
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td>
+                        USD
+                    </td>
+                    <td>
+                        Dolar
+                    </td>
+                    <td>
+                        32.30
+                    </td>
+                    <td>
+                        33.5
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        USD
+                    </td>
+                    <td>
+                        Dolar
+                    </td>
+                    <td>
+                        32.30
+                    </td>
+                    <td>
+                        33.5
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         USD
