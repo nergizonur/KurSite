@@ -24,7 +24,7 @@ namespace KurSite.Controllers
             xmlDocument.Load(link);
             string usd = xmlDocument.SelectSingleNode("Tarih_Date/Currency[@Kod=\"USD\"]/BanknoteBuying").InnerXml.ToString();
 
-            return View(usd);
+            return View((object)usd);
 
         }
     }
