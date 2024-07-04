@@ -12,11 +12,8 @@
     <title>Index</title>
 </head>
 <body>
-    <div>
-        @Model
-    </div>
     <div class="p-5 table-responsive-sm">
-        <table class="table table-hover table-striped">
+        <table class="table table-hover table-striped rounded shadow-lg">
             <thead>
                 <tr class="table-dark">
                     <th>
@@ -38,7 +35,7 @@
                 @foreach (var forex in Model)
                 {
                     <tr>
-                        <td>
+                        <td class="fw-bold">
                             @forex.ForexCode/TRY
                         </td>
                         <td>

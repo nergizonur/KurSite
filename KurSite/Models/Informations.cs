@@ -31,7 +31,6 @@ namespace KurSite.Models
             "KRW",
             "AZN",
             "AED",
-            "XDR",
 
         };
 
