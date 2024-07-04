@@ -17,11 +17,22 @@ namespace KurSite.Controllers
     public class HomeController : Controller
     {
         Informations Informations = new Informations();
-        
+
         // GET: Home
+
+        [HttpGet]
         public ActionResult Index()
         {
-            
+            ViewBag.code = "";
+
+            return View(Informations.getForexList());
+
+        }
+
+        [HttpPost]
+        public ActionResult Index(string code)
+        {
+            ViewBag.code = code.ToUpper();
 
             return View(Informations.getForexList());
 

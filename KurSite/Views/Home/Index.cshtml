@@ -8,18 +8,17 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link  rel="stylesheet" href="~/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
     <title>Index</title>
 </head>
 <body>
-
     <div class="navbar navbar-dark bg-dark py-4 px-5 d-flex justify-content-between">
         <a href="#" class="navbar-brand">KUR SİTESİ</a>
         <div>
-            <form method="post">
+            <form method="post" action="/Home/Index">
                 <div class="row">
                     <div class="col-9">
-                        <input type="text" class="form-control" placeholder="Kur Kodu">
+                        <input type="text" class="form-control" placeholder="Kur Kodu" name="code">
                     </div>
                     <div class="col-3">
                         <input type="submit" class="btn btn-primary" value="Ara">
@@ -29,8 +28,7 @@
 
         </div>
     </div>
-
-    <div class="p-5 table-responsive-sm">
+    <div class="p-2 table-responsive-sm">
         <table class="table table-hover table-striped rounded shadow-lg">
             <thead>
                 <tr class="table-dark">
@@ -52,28 +50,48 @@
             <tbody>
                 @foreach (var forex in Model)
                 {
-                    <tr>
-                        <td class="fw-bold">
-                            @forex.ForexCode/TRY
-                        </td>
-                        <td>
-                            @forex.ForexName
-                        </td>
-                        <td>
-                            @forex.ForexBuying
+                    if (ViewBag.code == forex.ForexCode)
+                    {
+                        <tr class="table-success">
+                            <td class="fw-bold">
+                                @forex.ForexCode/TRY
+                            </td>
+                            <td>
+                                @forex.ForexName
+                            </td>
+                            <td>
+                                @forex.ForexBuying
 
-                        </td>
-                        <td>
-                            @forex.ForexSelling
-                        </td>
-                    </tr>
+                            </td>
+                            <td>
+                                @forex.ForexSelling
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td class="fw-bold">
+                                @forex.ForexCode/TRY
+                            </td>
+                            <td>
+                                @forex.ForexName
+                            </td>
+                            <td>
+                                @forex.ForexBuying
+
+                            </td>
+                            <td>
+                                @forex.ForexSelling
+                            </td>
+                        </tr>
+                    }
                 }
 
 
             </tbody>
         </table>
     </div>
-
 
 
     <script src="~/js/bootstrap.min.js"></script>
