@@ -7,19 +7,13 @@ using System.Xml.Serialization;
 
 namespace KurSite.Models
 {
-    [XmlRoot("Kur")]
     public class Kur
     {
-        [XmlElement("ForexCode")]
         public string ForexCode { get; set; }
 
-        [XmlElement("Name")]
-        public string Name { get; set; }
+        public string ForexName { get; set; }
 
-        [XmlElement("ForexBuying")]
-        public string  ForexBuying{ get; set; }
-
-        [XmlElement("ForexSelling")]
+        public string ForexBuying { get; set; }
         public string ForexSelling { get; set; }
 
 

@@ -1,4 +1,4 @@
-﻿@model string
+﻿@model List<KurSite.Models.Kur>
 @{
 
 }
@@ -35,48 +35,26 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        USD
-                    </td>
-                    <td>
-                        Dolar
-                    </td>
-                    <td>
-                        32.30
-                    </td>
-                    <td>
-                        33.5
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        USD
-                    </td>
-                    <td>
-                        Dolar
-                    </td>
-                    <td>
-                        32.30
-                    </td>
-                    <td>
-                        33.5
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        USD
-                    </td>
-                    <td>
-                        Dolar
-                    </td>
-                    <td>
-                        32.30
-                    </td>
-                    <td>
-                        33.5
-                    </td>
-                </tr>
+                @foreach (var forex in Model)
+                {
+                    <tr>
+                        <td>
+                            @forex.ForexCode/TRY
+                        </td>
+                        <td>
+                            @forex.ForexName
+                        </td>
+                        <td>
+                            @forex.ForexBuying
+
+                        </td>
+                        <td>
+                            @forex.ForexSelling
+                        </td>
+                    </tr>
+                }
+
+
             </tbody>
         </table>
     </div>

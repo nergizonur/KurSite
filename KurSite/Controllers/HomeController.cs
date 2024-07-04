@@ -16,15 +16,14 @@ namespace KurSite.Controllers
 {
     public class HomeController : Controller
     {
+        Informations Informations = new Informations();
+        
         // GET: Home
         public ActionResult Index()
         {
-            string link = "https://www.tcmb.gov.tr/kurlar/today.xml";
-            var xmlDocument = new XmlDocument();
-            xmlDocument.Load(link);
-            string usd = xmlDocument.SelectSingleNode("Tarih_Date/Currency[@Kod=\"USD\"]/BanknoteBuying").InnerXml.ToString();
+            
 
-            return View((object)usd);
+            return View(Informations.getForexList());
 
         }
     }
