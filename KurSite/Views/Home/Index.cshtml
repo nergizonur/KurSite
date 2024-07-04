@@ -1,6 +1,6 @@
-﻿
+﻿@model int
 @{
-    Layout = null;
+
 }
 
 <!DOCTYPE html>
@@ -8,10 +8,50 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link  rel="stylesheet" href="~/css/bootstrap.min.css"/>
     <title>Index</title>
 </head>
 <body>
-    <div> 
+    <div class="p-5">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Döviz Kodu
+                    </th>
+                    <th>
+                        Adı
+                    </th>
+                    <th>
+                        Alış Fiyatı
+                    </th>
+                    <th>
+                        Satış Fiyatı
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        USD
+                    </td>
+                    <td>
+                        Dolar
+                    </td>
+                    <td>
+                        32.30
+                    </td>
+                    <td>
+                        33.5
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    
+
+
+    <script src="~/js/bootstrap.min.js"></script>
 </body>
 </html>
