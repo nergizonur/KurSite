@@ -11,31 +11,26 @@ using System.Security.Cryptography.X509Certificates;
 using KurSite.Models;
 using System.Xml;
 using Microsoft.SqlServer.Server;
+using KurSite.Services;
 
 namespace KurSite.Controllers
 {
     public class HomeController : Controller
     {
-        Informations Informations = new Informations();
+        ForexServices forexService = new ForexServices();
 
         // GET: Home
 
         [HttpGet]
         public ActionResult Index()
         {
-            ViewBag.code = "";
-
-            return View(Informations.getForexList());
-
+            return View(forexService.getForexList());
         }
 
         [HttpPost]
         public ActionResult Index(string code)
         {
-            ViewBag.code = code.ToUpper();
-
-            return View(Informations.getForexList());
-
+            return View(forexService.getForexList(code));
         }
     }
 }

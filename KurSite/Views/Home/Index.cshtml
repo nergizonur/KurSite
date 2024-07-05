@@ -50,42 +50,21 @@
             <tbody>
                 @foreach (var forex in Model)
                 {
-                    if (ViewBag.code == forex.ForexCode)
-                    {
-                        <tr class="table-success">
-                            <td class="fw-bold">
-                                @forex.ForexCode/TRY
-                            </td>
-                            <td>
-                                @forex.ForexName
-                            </td>
-                            <td>
-                                @forex.ForexBuying
+                <tr>
+                    <td class="fw-bold">
+                        @forex.ForexCode/TRY
+                    </td>
+                    <td>
+                        @forex.ForexName
+                    </td>
+                    <td>
+                        @forex.ForexBuying
 
-                            </td>
-                            <td>
-                                @forex.ForexSelling
-                            </td>
-                        </tr>
-                    }
-                    else
-                    {
-                        <tr>
-                            <td class="fw-bold">
-                                @forex.ForexCode/TRY
-                            </td>
-                            <td>
-                                @forex.ForexName
-                            </td>
-                            <td>
-                                @forex.ForexBuying
-
-                            </td>
-                            <td>
-                                @forex.ForexSelling
-                            </td>
-                        </tr>
-                    }
+                    </td>
+                    <td>
+                        @forex.ForexSelling
+                    </td>
+                </tr>
                 }
 
 
