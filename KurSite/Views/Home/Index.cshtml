@@ -12,6 +12,7 @@
     <title>Index</title>
 </head>
 <body>
+
     <div class="navbar navbar-dark bg-dark py-4 px-5 d-flex justify-content-between">
         <a href="#" class="navbar-brand">KUR SİTESİ</a>
         <div>
@@ -27,6 +28,18 @@
             </form>
 
         </div>
+    </div>
+    <div class="p-5">
+        <form method="post" action="/Home/SelectDate">
+            <div class="row">
+                <div class="col-9">
+                    <input type="date" name="date" class="form-control" />
+                </div>
+                <div class="col-3">
+                    <input type="submit" value="Listele" class="btn btn-outline-primary"/>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="p-2 table-responsive-sm">
         <table class="table table-hover table-striped rounded shadow-lg">
@@ -50,21 +63,21 @@
             <tbody>
                 @foreach (var forex in Model)
                 {
-                <tr>
-                    <td class="fw-bold">
-                        @forex.ForexCode/TRY
-                    </td>
-                    <td>
-                        @forex.ForexName
-                    </td>
-                    <td>
-                        @forex.ForexBuying
+                    <tr>
+                        <td class="fw-bold">
+                            @forex.ForexCode/TRY
+                        </td>
+                        <td>
+                            @forex.ForexName
+                        </td>
+                        <td>
+                            @forex.ForexBuying
 
-                    </td>
-                    <td>
-                        @forex.ForexSelling
-                    </td>
-                </tr>
+                        </td>
+                        <td>
+                            @forex.ForexSelling
+                        </td>
+                    </tr>
                 }
 
 
