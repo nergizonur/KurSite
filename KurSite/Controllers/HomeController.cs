@@ -38,9 +38,6 @@ namespace KurSite.Controllers
         [HttpPost]
         public ActionResult SelectDate(string date)
         {
-
-            
-            
             CurrencyCodes currencyCode = new CurrencyCodes();
             List<Kur> forexList = new List<Kur>();
             string link = $"https://www.tcmb.gov.tr/kurlar/{dateConverter.getYear(date)}{dateConverter.getMonth(date)}/{dateConverter.getDay(date)}{dateConverter.getMonth(date)}{dateConverter.getYear(date)}.xml";
