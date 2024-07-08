@@ -31,7 +31,7 @@ $(function () {
                 $(xml).find('Currency').each(function () {
                     var baslik = $(this).find('Isim').text();
                     var yazar = $(this).find('ForexBuying').text();
-                    console.log("Baþlýk: " + baþlýk + ", Yazaar: " + yazar);
+                    console.log("Baþlýk: " + baþlýk + ", Yazar: " + yazar);
                 });
             },
             error: function () {
