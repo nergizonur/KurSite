@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace KurSite.Controllers
 {
-    public class CurrencyController : Controller
+    public class WeatherController : Controller
     {
-        // GET: Currency
+        // GET: Weather
         public ActionResult Index()
         {
             return View();

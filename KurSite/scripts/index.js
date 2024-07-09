@@ -3,18 +3,20 @@ new gridjs.Grid({
     sort: true,
     search: true,
     pagination: true,
-    columns: ['Doviz Kodu', 'Doviz Cinsi', 'Doviz Alis', "Doviz Satis"],
+    columns: ["Bolge", 'Periyot' , "Sehir", "Durum", "Maksimum Sicaklik"],
     server: {
-        url: 'https://gridjs.io/sitemap.xml',
+        url: 'https://www.mgm.gov.tr/FTPDATA/analiz/sonSOA.xml',
         handle: (res) => {
             return res.text().then(str => (new window.DOMParser()).parseFromString(str, "text/xml"));
         },
         then: data => {
-            return Array.from(data.querySelectorAll('url'))
+            return Array.from(data.querySelectorAll('sehirler'))
                 .map(row => [
-                    row.querySelector('changefreq').innerHTML,
-                    row.querySelector('loc').innerHTML,
-                    row.querySelector('priority').innerHTML,
+                    row.querySelector('Bolge').innerHTML,
+                    row.querySelector('Peryot').innerHTML,
+                    row.querySelector('ili').innerHTML,
+                    row.querySelector('Durum').innerHTML,
+                    row.querySelector('Mak').innerHTML,
                 ]);
         }
     }
