@@ -4,66 +4,29 @@
     ViewBag.kur = "active";
 }
 
+<div class="tab d-flex justify-content-evenly">
+    <button class="tablinks" onclick="Tabs(event, 'KurListesi')">Kur Listesi</button>
+    <button class="tablinks" onclick="Tabs(event, 'Ayarlar')">Ayarlar</button>
+    <button class="tablinks" onclick="Tabs(event, 'KurCevirici')">Kur Çevirisi</button>
+</div>
 
-    <div class="p-5">
-        <div class="row">
-            <div class="col-3">
-                <form method="post" action="/Home/SelectDate">
+<div id="KurListesi" class="tabcontent">
+    <div class="py-2 px-5 table-responsive-sm">
+        <div class="col mb-3">
+            <div>
+                <form method="post" action="/Home/Index">
                     <div class="row">
-                        <div class="col-9">
-                            <input type="date" name="date" class="form-control" />
+                        <div class="col-10">
+                            <input type="text" class="form-control" placeholder="Kur Kodu" name="code">
                         </div>
-                        <div class="col-3">
-                            <input type="submit" value="Listele" class="btn btn-outline-primary" />
+                        <div class="col-2">
+                            <input type="submit" class="btn btn-primary" value="Ara">
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="col-3">
-                <div class="row">
-                    <div class="col">
-                        <div class="d-flex justify-content-end">
-                            <input type="color" id="color" class="form-control-color" />
-                        </div>
-                    </div>
-                    <div class="col">
 
-                        <input type="button" id="colorChangeButton" value="Yazı Rengi Değiştir" class="btn btn-outline-success" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="row">
-                    <div class="col">
-                        <div class="d-flex justify-content-end">
-                            <input type="number" id="fontSize" class="form-control" value="12" min="12" max="30" />
-                        </div>
-                    </div>
-                    <div class="col">
-
-                        <input type="button" id="fontSizeChangeButton" value="Font Büyüklüğü Değiştir." class="btn btn-outline-info" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div>
-                    <form method="post" action="/Home/Index">
-                        <div class="row">
-                            <div class="col-9">
-                                <input type="text" class="form-control" placeholder="Kur Kodu" name="code">
-                            </div>
-                            <div class="col-3">
-                                <input type="submit" class="btn btn-primary" value="Ara">
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
             </div>
         </div>
-       
-    </div>
-    <div class="py-2 px-5 table-responsive-sm">
         <table class="table table-hover table-striped">
             <thead>
                 <tr class="table-dark">
@@ -106,7 +69,80 @@
             </tbody>
         </table>
     </div>
-    <script src="~/scripts/jquery-3.7.1.min.js"></script>
-    <script src="~/scripts/home/app.js"></script>
+</div>
 
-    <script src="~/js/bootstrap.min.js"></script>
+<div id="Ayarlar" class="tabcontent">
+    <div class="p-5">
+        <div class="row">
+            <div class="col-4">
+                <form method="post" action="/Home/SelectDate">
+                    <div class="row">
+                        <div class="col-9">
+                            <input type="date" name="date" class="form-control" />
+                        </div>
+                        <div class="col-3">
+                            <input type="submit" value="Listele" class="btn btn-outline-primary" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex justify-content-end">
+                            <input type="color" id="color" class="form-control-color" />
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <input type="button" id="colorChangeButton" value="Yazı Rengi Değiştir" class="btn btn-outline-success" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex justify-content-end">
+                            <input type="number" id="fontSize" class="form-control" value="12" min="12" max="30" />
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <input type="button" id="fontSizeChangeButton" value="Font Büyüklüğü Değiştir." class="btn btn-outline-info" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="KurCevirici" class="tabcontent">
+    <h2>
+        Kur Çevirici
+    </h2>
+
+</div>
+
+
+
+
+<script src="~/scripts/jquery-3.7.1.min.js"></script>
+<script src="~/scripts/home/app.js"></script>
+
+<script src="~/js/bootstrap.min.js"></script>
+<script>
+    function Tabs(evt, Name) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(Name).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
