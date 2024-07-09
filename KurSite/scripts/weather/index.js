@@ -1,7 +1,11 @@
 
 new gridjs.Grid({
+
     sort: true,
-    search: true,
+    search: {
+        Enabled: true,
+        placeholder: 'Aramak terimini girin...' 
+    },
     pagination: true,
     columns: ["Bolge", 'Periyot' , "Sehir", "Durum", "Maksimum Sicaklik"],
     server: {
@@ -19,5 +23,19 @@ new gridjs.Grid({
                     row.querySelector('Mak').innerHTML,
                 ]);
         }
+    },
+    language: {
+        'search': {
+            'placeholder': 'Aramak için yazýn...' // Arama yer tutucusunu özelleþtirme
+        },
+        'pagination': {
+            'previous': 'Onceki',
+            'next': 'Sonraki',
+            'showing': 'Gosteriliyor',
+            'results': () => 'sonuc'
+        }
     }
+
 }).render(document.getElementById("wrapper"));
+
+document.querySelector('.gridjs-search-input').placeholder = 'Arama terimini giriniz...';

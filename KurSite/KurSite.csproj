@@ -124,6 +124,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
     <Content Include="css\bootstrap-grid.rtl.css" />
@@ -147,9 +148,9 @@
     <Content Include="js\bootstrap.esm.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="scripts\app.js" />
-    <Content Include="scripts\index.js" />
+    <Content Include="scripts\home\app.js" />
     <Content Include="scripts\jquery-3.7.1.min.js" />
+    <Content Include="scripts\weather\index.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +194,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\SelectDate.cshtml" />
     <Content Include="Views\Weather\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,30 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+          rel="stylesheet" />
+    <title>@ViewBag.title</title>
+   
+</head>
+<body>
+    <div class="navbar navbar-dark bg-dark py-4 px-5 d-flex justify-content-between">
+        <a href="#" class="navbar-brand">KUR SİTESİ</a>
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a href="/Home/Index" class="nav-link @ViewBag.kur">Kurlar</a>
+            </li>
+            <li class="nav-item">
+                <a href="/Weather/Index" class="nav-link @ViewBag.hava">Hava Durumu</a>
+            </li>
+        </ul>
+    </div>
+
+    @RenderBody()
+</body>
+</html>

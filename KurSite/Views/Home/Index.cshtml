@@ -1,37 +1,13 @@
 ﻿@model List<KurSite.Models.Kur>
 @{
-
+    ViewBag.title = "Kurlar";
+    ViewBag.kur = "active";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
-    <title>Index</title>
-</head>
-<body>
-
-    <div class="navbar navbar-dark bg-dark py-4 px-5 d-flex justify-content-between">
-        <a href="#" class="navbar-brand">KUR SİTESİ</a>
-        <div>
-            <form method="post" action="/Home/Index">
-                <div class="row">
-                    <div class="col-9">
-                        <input type="text" class="form-control" placeholder="Kur Kodu" name="code">
-                    </div>
-                    <div class="col-3">
-                        <input type="submit" class="btn btn-primary" value="Ara">
-                    </div>
-                </div>
-            </form>
-
-        </div>
-    </div>
     <div class="p-5">
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <form method="post" action="/Home/SelectDate">
                     <div class="row">
                         <div class="col-9">
@@ -43,7 +19,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <div class="row">
                     <div class="col">
                         <div class="d-flex justify-content-end">
@@ -56,11 +32,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <div class="row">
                     <div class="col">
                         <div class="d-flex justify-content-end">
-                            <input type="number" id="fontSize" class="form-control" value="12" min="12" max="30"/>
+                            <input type="number" id="fontSize" class="form-control" value="12" min="12" max="30" />
                         </div>
                     </div>
                     <div class="col">
@@ -69,7 +45,21 @@
                     </div>
                 </div>
             </div>
+            <div class="col-3">
+                <div>
+                    <form method="post" action="/Home/Index">
+                        <div class="row">
+                            <div class="col-9">
+                                <input type="text" class="form-control" placeholder="Kur Kodu" name="code">
+                            </div>
+                            <div class="col-3">
+                                <input type="submit" class="btn btn-primary" value="Ara">
+                            </div>
+                        </div>
+                    </form>
 
+                </div>
+            </div>
         </div>
        
     </div>
@@ -117,8 +107,6 @@
         </table>
     </div>
     <script src="~/scripts/jquery-3.7.1.min.js"></script>
-    <script src="~/scripts/app.js"></script>
+    <script src="~/scripts/home/app.js"></script>
 
     <script src="~/js/bootstrap.min.js"></script>
-</body>
-</html>

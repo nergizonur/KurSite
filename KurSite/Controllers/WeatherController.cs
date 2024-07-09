@@ -13,5 +13,6 @@ namespace KurSite.Controllers
         {
             return View();
         }
+      
     }
 }
