@@ -109,10 +109,52 @@
     </div>
 </div>
 
+
+
 <div id="KurCevirici" class="tabcontent">
-    <h2>
-        Kur Çevirici
-    </h2>
+    <div class="p-5">
+        <div class="row align-items-center">
+            <div class="col-5">
+                <div class="text-secondary fs-4">
+                    <div class="my-2">1 ABD Doları Eşittir</div>
+                </div>
+
+                <div class="fw-bold fs-2">32,92 Türk Lirası</div>
+
+            </div>
+
+
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-3">
+                        <input type="number" id="tutar1" name="name" value="1" class="form-control " />
+                    </div>
+                    <div class="col-9">
+                        <select class="form-select" id="cevirilen">
+                            @foreach (var item in Model)
+                            {
+                                <option value="value">@item.ForexName</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="col-3 pt-5">
+                        <input  type="number" id="tutar1" name="name" value="1" class="form-control"/>
+                    </div>
+                    <div class="col-9 pt-5">
+                        <select class="form-select" id="cevrilcek">
+                            @foreach (var item in Model)
+                            {
+                                <option value="value">@item.ForexName</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
 </div>
 
 <script src="~/scripts/jquery-3.7.1.min.js"></script>
@@ -132,4 +174,6 @@
         document.getElementById(Name).style.display = "block";
         evt.currentTarget.className += " active";
     }
+
+
 </script>
