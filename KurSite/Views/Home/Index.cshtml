@@ -5,12 +5,12 @@
 }
 
 <div class="tab d-flex justify-content-evenly">
-    <button class="tablinks" onclick="Tabs(event, 'KurListesi')">Kur Listesi</button>
+    <button class="tablinks active" onclick="Tabs(event, 'KurListesi')">Kur Listesi</button>
     <button class="tablinks" onclick="Tabs(event, 'Ayarlar')">Ayarlar</button>
     <button class="tablinks" onclick="Tabs(event, 'KurCevirici')">Kur Çevirisi</button>
 </div>
 
-<div id="KurListesi" class="tabcontent">
+<div id="KurListesi" class="tabcontent" style="display: block;">
     <div class="py-2 px-5 table-responsive-sm">
         <div class="col mb-3">
             <div>
@@ -24,7 +24,6 @@
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
         <table class="table table-hover table-striped">
@@ -42,7 +41,6 @@
                     <th>
                         Satış Fiyatı
                     </th>
-
                 </tr>
             </thead>
             <tbody>
@@ -57,15 +55,12 @@
                         </td>
                         <td>
                             @forex.ForexBuying
-
                         </td>
                         <td>
                             @forex.ForexSelling
                         </td>
                     </tr>
                 }
-
-
             </tbody>
         </table>
     </div>
@@ -94,7 +89,6 @@
                         </div>
                     </div>
                     <div class="col">
-
                         <input type="button" id="colorChangeButton" value="Yazı Rengi Değiştir" class="btn btn-outline-success" />
                     </div>
                 </div>
@@ -107,13 +101,11 @@
                         </div>
                     </div>
                     <div class="col">
-
                         <input type="button" id="fontSizeChangeButton" value="Font Büyüklüğü Değiştir." class="btn btn-outline-info" />
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -121,15 +113,10 @@
     <h2>
         Kur Çevirici
     </h2>
-
 </div>
-
-
-
 
 <script src="~/scripts/jquery-3.7.1.min.js"></script>
 <script src="~/scripts/home/app.js"></script>
-
 <script src="~/js/bootstrap.min.js"></script>
 <script>
     function Tabs(evt, Name) {
