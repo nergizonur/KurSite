@@ -111,6 +111,7 @@ namespace KurSite.Controllers
                 }
             }
             ViewBag.firstForex = firstForexSelect;
+
             ViewBag.secondForex = secondForexSelect;
             double value = firstForexValue / secondForexValue;
             ViewBag.exchangeValue = value;
