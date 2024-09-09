@@ -26,12 +26,37 @@ namespace KurSite.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            List<Kur> forexList = forexService.getForexList();
+            ViewBag.firstForex = "ABD DOLARI";
+            ViewBag.secondForex = "TÜRK LİRASI";
+            double value = 0;
+            foreach (var item in forexList)
+            {
+                if (item.ForexName == "ABD DOLARI")
+                {
+                    value = Convert.ToDouble(item.ForexBuying);
+                }
+            }
+            ViewBag.exchangeValue = value;
             return View(forexService.getForexList());
         }
 
         [HttpPost]
         public ActionResult Index(string code)
         {
+            List<Kur> forexList = forexService.getForexList();
+            ViewBag.firstForex = "ABD DOLARI";
+            ViewBag.secondForex = "TÜRK LİRASI";
+            double value = 0;
+            foreach (var item in forexList)
+            {
+                if (item.ForexName == "ABD DOLARI")
+                {
+                    value = Convert.ToDouble(item.ForexBuying);
+                }
+            }
+            ViewBag.exchangeValue = value;
+            return View("Index", forexList);
             return View(forexService.getForexList(code));
         }
 
@@ -52,7 +77,43 @@ namespace KurSite.Controllers
                 forex.ForexSelling = xmlDocument.SelectSingleNode($"Tarih_Date/Currency[@Kod=\"{code}\"]/ForexSelling").InnerXml;
                 forexList.Add(forex);
             }
+            ViewBag.firstForex = "ABD DOLARI";
+            ViewBag.secondForex = "TÜRK LİRASI";
+            double value = 0;
+            foreach (var item in forexList)
+            {
+                if(item.ForexName== "ABD DOLARI")
+                {
+                    value = Convert.ToDouble(item.ForexBuying);
+                }
+            }
+            ViewBag.exchangeValue = value;
+            return View("Index",forexList);
 
+        }
+
+
+
+        [HttpPost]
+        public ActionResult Exchange(string firstForexSelect,string secondForexSelect)
+        {
+            double firstForexValue=0, secondForexValue=0;
+            List<Kur> forexList = forexService.getForexList();
+            foreach (var item in forexList)
+            {
+                if(item.ForexName== firstForexSelect)
+                {
+                    firstForexValue = Convert.ToDouble(item.ForexBuying);
+                }
+                else if(item.ForexName == secondForexSelect)
+                {
+                    secondForexValue = Convert.ToDouble(item.ForexBuying);
+                }
+            }
+            ViewBag.firstForex = firstForexSelect;
+            ViewBag.secondForex = secondForexSelect;
+            double value = firstForexValue / secondForexValue;
+            ViewBag.exchangeValue = value;
             return View("Index",forexList);
 
         }

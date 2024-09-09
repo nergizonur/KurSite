@@ -150,6 +150,7 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="scripts\home\app.js" />
+    <Content Include="scripts\home\exchange.js" />
     <Content Include="scripts\jquery-3.7.1.min.js" />
     <Content Include="scripts\weather\index.js" />
     <Content Include="Web.config" />
@@ -223,6 +224,8 @@
           <DevelopmentServerPort>57075</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44366/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://localhost:44366/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
