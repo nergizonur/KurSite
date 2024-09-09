@@ -29,6 +29,7 @@ namespace KurSite.Controllers
             List<Kur> forexList = forexService.getForexList();
             ViewBag.firstForex = "ABD DOLARI";
             ViewBag.secondForex = "TÜRK LİRASI";
+            ViewBag.number = 1;
             double value = 0;
             foreach (var item in forexList)
             {
@@ -46,6 +47,7 @@ namespace KurSite.Controllers
         {
             List<Kur> forexList = forexService.getForexList();
             ViewBag.firstForex = "ABD DOLARI";
+            ViewBag.number = 1;
             ViewBag.secondForex = "TÜRK LİRASI";
             double value = 0;
             foreach (var item in forexList)
@@ -79,6 +81,7 @@ namespace KurSite.Controllers
             }
             ViewBag.firstForex = "ABD DOLARI";
             ViewBag.secondForex = "TÜRK LİRASI";
+            ViewBag.number = 1;
             double value = 0;
             foreach (var item in forexList)
             {
@@ -95,8 +98,12 @@ namespace KurSite.Controllers
 
 
         [HttpPost]
-        public ActionResult Exchange(string firstForexSelect,string secondForexSelect)
+        public ActionResult Exchange(string firstForexSelect,string secondForexSelect,int? number)
         {
+            if (number == null)
+            {
+                number = 1;
+            }
             double firstForexValue=0, secondForexValue=0;
             List<Kur> forexList = forexService.getForexList();
             foreach (var item in forexList)
@@ -114,7 +121,8 @@ namespace KurSite.Controllers
 
             ViewBag.secondForex = secondForexSelect;
             double value = firstForexValue / secondForexValue;
-            ViewBag.exchangeValue = value;
+            ViewBag.exchangeValue = value*number;
+            ViewBag.number = number;
             return View("Index",forexList);
 
         }
