@@ -151,6 +151,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="scripts\home\app.js" />
     <Content Include="scripts\home\exchange.js" />
+    <Content Include="scripts\home\exportToExcel.js" />
     <Content Include="scripts\jquery-3.7.1.min.js" />
     <Content Include="scripts\weather\index.js" />
     <Content Include="Web.config" />
