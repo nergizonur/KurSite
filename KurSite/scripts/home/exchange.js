@@ -9,12 +9,12 @@
         var firstForexValue = $("#firstForexSelected").val();
         var secondForexValue = $("#secondForexSelected").val();
         var number = $("#number").val();
-
         var value = (firstForexValue / secondForexValue)*number;
 
         $("#firstForex").text(firstForex)  ;
         $("#secondForex").text(secondForex)  ;
         $("#forexValue").text(value);
+        $("#numberText").text(number);
 
 
     })
