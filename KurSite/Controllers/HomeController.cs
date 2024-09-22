@@ -59,7 +59,6 @@ namespace KurSite.Controllers
             }
             ViewBag.exchangeValue = value;
             return View("Index", forexList);
-            return View(forexService.getForexList(code));
         }
 
         [HttpPost]

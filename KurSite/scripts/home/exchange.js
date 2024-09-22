@@ -13,7 +13,7 @@
 
         $("#firstForex").text(firstForex)  ;
         $("#secondForex").text(secondForex)  ;
-        $("#forexValue").text(value);
+        $("#forexValue").text(value.toFixed(4));
         $("#numberText").text(number);
 
 
