@@ -1,6 +1,19 @@
 ﻿$(function () {
 
-
+    $("#saveOrderButton").click(
+        function () {
+            let newsavedForex = {};
+            let savedForexs = JSON.parse(localStorage.getItem("savedForex"));
+            let colList = $("#savedForexList li .col-8");
+            for (var i = 0; i <= colList.length-1; i++) {
+                newsavedForex[colList[i].innerHTML] = savedForexs[colList[i].innerHTML];
+                
+            }
+            localStorage.setItem("savedForex", JSON.stringify(newsavedForex));
+            debugger;
+            savedForexListUpdate("update");
+        }
+    );
     function getForexCount() {
         var savedForex = JSON.parse(localStorage.getItem("savedForex"));
         if (!savedForex == null) {
@@ -51,9 +64,9 @@ function savedForexListUpdate(selection) {
                 var html = `
             <li class="list-group-item list-group-item-action rounded-3 py-2 mb-4 shadow-sm">
                         <div class="row align-items-center">
-                            <div class="col-8">
-                                ${key}
-                            </div>
+                            
+                     <div class="col-8">${key}</div>
+                           
                             <div class="col-2">
                                 <button class="btn btn-danger" onclick="savedForexListDelete('${key}')"><i class="fa-solid fa-trash"></i></button>
                             </div>
@@ -71,7 +84,7 @@ function savedForexListUpdate(selection) {
         $("#savedForexRows").html("");
         var savedForex2 = JSON.parse(localStorage.getItem("savedForex"));
         if (savedForex2 != null) {
-            for (let key in savedForex) {
+            for (let key in savedForex2) {
                 var oldListHtml = $("#savedForexRows").html();
                 var html = `
             <tr>
@@ -107,9 +120,9 @@ function savedForexListUpdate(selection) {
                 var html = `
             <li class="list-group-item list-group-item-action rounded-3 py-2 mb-4 shadow-sm">
                         <div class="row align-items-center">
-                            <div class="col-8">
-                                ${key}
-                            </div>
+                            
+                                <div class="col-8">${key}</div>
+                            
                             <div class="col-2">
                                 <button class="btn btn-danger" onclick="savedForexListDelete('${key}')"><i class="fa-solid fa-trash"></i></button>
                             </div>
@@ -180,6 +193,7 @@ function savedForexListUpdate(selection) {
                 $("#savedForexList").html(html + oldListHtml);
             }
         }
+       
 
         $("#savedForexRows").html("");
         var savedForex2 = JSON.parse(localStorage.getItem("savedForex"));
