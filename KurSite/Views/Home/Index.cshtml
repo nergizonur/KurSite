@@ -205,7 +205,7 @@
                         <div class="py-3 text-center fs-4 fw-bold">
                             Kayıtlı Kurlar
                         </div>
-                        <table class="table table-bordered table-hover table-striped">
+                        <table class="table table-bordered table-hover table-striped" id="savedForexTable">
                             <thead>
                                 <tr>
                                     <th>
@@ -245,7 +245,11 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="mt-5 d-flex justify-content-end">
+                            <input type="button" onclick="savedForexDownloadToExcel()" class="btn btn-primary" value="Excel Formatında İndir">
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

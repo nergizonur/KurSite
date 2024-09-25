@@ -10,7 +10,6 @@
                 
             }
             localStorage.setItem("savedForex", JSON.stringify(newsavedForex));
-            debugger;
             savedForexListUpdate("update");
         }
     );
