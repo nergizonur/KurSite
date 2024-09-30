@@ -15,7 +15,7 @@
     );
     function getForexCount() {
         var savedForex = JSON.parse(localStorage.getItem("savedForex"));
-        if (!savedForex == null) {
+        if (savedForex == null) {
             return 0;
         }
         let count = Object.keys(savedForex).length;
